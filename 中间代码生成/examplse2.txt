@@ -1,0 +1,7 @@
+Const x=8,y=7;
+Var a,b,c;
+begin
+   a=2*x;
+   b=a+x+y;
+   c=a+3*b;
+end

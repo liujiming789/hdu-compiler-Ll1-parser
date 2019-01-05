@@ -1,0 +1,30 @@
+Program->PL1 PL2 Yuju
+PL1->Constexp|#
+PL2->Varexp|#
+Constexp->Const Constdef CL ;
+CL->, Constdef CL|#
+Constdef->Indent = Unsigned
+Unsigned->Number
+Letter->a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z 
+Number->0|1|2|3|4|5|6|7|8|9
+Indent->Letter IL
+IL->Letter IL|Number IL|#
+Varexp->Var Indent VL ;
+VL->, Indent VL|#
+Yuju->Valyuju|Judgeyuju|Whileyuju|Fuheyuju
+Valyuju->Indent = Expression ;
+Expression->+ Xiang EL|- Xiang EL|Xiang EL
+EL->Jiafa Xiang|#
+Xiang->Yinzi XL
+XL->Multi Yinzi|#
+Yinzi->Indent|Unsigned|( Expression )
+Jiafa->+|-
+Multi->*|/
+Judgeyuju->if Expression Guanxi Expression then Yuju JL
+JL->else Yuju|#
+Whileyuju->while Expression Guanxi Expression do Yuju
+Guanxi->= =|> G1L|< G2L
+G1L->=|#
+G2L->=|>|#
+Fuheyuju->begin Yuju FL end
+FL->Yuju FL|#
